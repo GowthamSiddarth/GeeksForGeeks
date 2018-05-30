@@ -1,11 +1,5 @@
 #include <stdio.h>
-
-void printArray(int * arr, int len) {
-    for (int i = 0; i < len; i++) {
-        printf("%d ", arr[i]);
-    }
-    printf("\n");
-}
+#include "../Helper/printArray.h"
 
 void swap(int *x, int *y) {
     *x = *x + *y - (*y = *x);
@@ -21,9 +15,9 @@ int main() {
     int arr[] = {1, 2, 3, 4, 5};
     int len = sizeof(arr) / sizeof(arr[0]);
 
-    printArray(arr, len);
+    printIntArray(arr, len);
     reverse(arr, len);
-    printArray(arr, len);
+    printIntArray(arr, len);
 
     return 0;
 }
