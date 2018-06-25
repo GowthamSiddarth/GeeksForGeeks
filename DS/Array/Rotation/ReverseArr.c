@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "../../../Helper/printArray.h"
+#include "../../../Helper/Array/printArray.h"
 
 void swap(int *x, int *y) {
     *x = *x + *y - (*y = *x);

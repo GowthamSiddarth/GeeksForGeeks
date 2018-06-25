@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "../../Helper/printArray.h"
+#include "../../Helper/Array/printArray.h"
 
 int indexOf(int *arr, int len, int key) {
     for (int i = 0; i < len; i++) {
