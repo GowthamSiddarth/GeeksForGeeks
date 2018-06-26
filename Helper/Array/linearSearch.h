@@ -8,12 +8,16 @@ int linearSearchItr(int *arr, int len, int key) {
     return -1;
 }
 
-int linearSearchRec(int *arr, int len, int key) {
-    if (0 == len) {
+int linearSearchRecHelper(int *arr, int len, int curr, int key) {
+    if (curr == len) {
         return -1;
-    } else if (key == arr[len - 1]) {
-        return len - 1;
+    } else if (key == arr[curr]) {
+        return curr;
     } else {
-        return linearSearchRec(arr, len - 1, key);
+        return linearSearchRecHelper(arr, len, curr + 1, key);
     }
+}
+
+int linearSearchRec(int *arr, int len, int key) {
+    return linearSearchRecHelper(arr, len, 0, key);
 }
