@@ -12,9 +12,9 @@ int main() {
   for (int i = 0; i < numOfQueries; i++) {
     int key = queries[i];
     int resItr = jumpSearchItr(arr, len, key);
-    // int resRec = binarySearchRec(arr, len, key);
+    int resRec = jumpSearchRec(arr, len, key);
 
-    printf("key = %d, resItr = %d\n", key, resItr);
+    printf("key = %d, resItr = %d, resRec = %d\n", key, resItr, resRec);
   }
 
   return 0;
