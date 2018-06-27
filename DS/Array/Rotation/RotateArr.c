@@ -14,11 +14,23 @@ void leftRotateWithTempArr(int *arr, int len, int numOfRotations) {
         numOfRotations = numOfRotations % len;
 
         int *temp = (int *)malloc(sizeof(int) * numOfRotations);
-        copyArr(arr, len, temp, numOfRotations, numOfRotations, 0, 0);
-        copyArr(arr + numOfRotations, len - numOfRotations, arr, len - numOfRotations, len - numOfRotations, 0, 0);
-        copyArr(temp, numOfRotations, arr + len - numOfRotations,  numOfRotations, numOfRotations, 0, 0);
+        copyIntArr(arr, len, temp, numOfRotations, numOfRotations, 0, 0);
+        copyIntArr(arr + numOfRotations, len - numOfRotations, arr, len - numOfRotations, len - numOfRotations, 0, 0);
+        copyIntArr(temp, numOfRotations, arr + len - numOfRotations,  numOfRotations, numOfRotations, 0, 0);
 
         free(temp);
+    }
+}
+
+void leftRotateOneByOne(int *arr, int len, int numOfRotations) {
+    if (numOfRotations > 0) {
+        numOfRotations = numOfRotations % len;
+
+        for (int i = 0; i < numOfRotations; i++) {
+            int temp = arr[0];
+            copyIntArr(arr + 1, len - 1, arr, len - 1, len - 1, 0, 0);
+            arr[len - 1] = temp;
+        }
     }
 }
 
@@ -30,9 +42,11 @@ int main () {
     int numOfQueries = sizeof(queries) / sizeof(queries[0]);
     for (int i = 0; i < numOfQueries; i++) {
         printIntArray(arr, len);
-        leftRotateWithTempArr(arr, len, queries[i]);
+        printf("num of rotations: %d\n", queries[i]);
+        leftRotateOneByOne(arr, len, queries[i]);
         printIntArray(arr, len);
 
+        // reset array state to test array rotations for next query.
         resetArray(arr, len);
         printf("\n");
     }
