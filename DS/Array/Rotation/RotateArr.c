@@ -2,6 +2,7 @@
 #include <malloc.h>
 #include "../../../Helper/Array/Util/printArray.h"
 #include "../../../Helper/Array/Util/arrayCopy.h"
+#include "../../../Helper/Math/gcd.h"
 
 void resetArray(int *arr, int len) {
     for (int i = 0; i < len; i++) {
@@ -34,7 +35,27 @@ void leftRotateOneByOne(int *arr, int len, int numOfRotations) {
     }
 }
 
+void leftRotateWithJugglingAlgo(int *arr, int len, int numOfRotations) {
+    int g = gcdInt(len, numOfRotations);
+    for (int i = 0; i < g; i++) {
+        int temp = arr[i];
+        int j = i;
+
+        while (1) {
+            int k = (j + numOfRotations) % len;
+            if (k == i) {
+                break;
+            }
+            arr[j] = arr[k];
+            j = k;
+        }
+
+        arr[j] = temp;
+    }
+}
+
 int main () {
+    printf("Start\n");
     int arr[] = {1, 2, 3, 4, 5, 6, 7};
     int len = sizeof(arr) / sizeof(arr[0]);
 
@@ -43,7 +64,7 @@ int main () {
     for (int i = 0; i < numOfQueries; i++) {
         printIntArray(arr, len);
         printf("num of rotations: %d\n", queries[i]);
-        leftRotateOneByOne(arr, len, queries[i]);
+        leftRotateWithJugglingAlgo(arr, len, queries[i]);
         printIntArray(arr, len);
 
         // reset array state to test array rotations for next query.
