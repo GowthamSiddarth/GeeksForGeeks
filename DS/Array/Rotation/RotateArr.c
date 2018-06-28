@@ -36,8 +36,8 @@ void leftRotateOneByOne(int *arr, int len, int numOfRotations) {
     }
 }
 
-void leftRotateWithJugglingAlgo(int *arr, int len, int numOfRotations) {
-    int g = gcdInt(len, numOfRotations);
+void leftRotateWithJugglingAlgo(int *arr, int len, int numOfRotations) {    
+    int g = gcdInt(len, numOfRotations);    
     for (int i = 0; i < g; i++) {
         int temp = arr[i];
         int j = i;
