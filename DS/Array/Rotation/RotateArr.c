@@ -3,6 +3,7 @@
 #include "../../../Helper/Array/Util/printArray.h"
 #include "../../../Helper/Array/Util/arrayCopy.h"
 #include "../../../Helper/Math/gcd.h"
+#include "../../../Helper/Array/Util/arrayReverse.h"
 
 void resetArray(int *arr, int len) {
     for (int i = 0; i < len; i++) {
@@ -54,6 +55,16 @@ void leftRotateWithJugglingAlgo(int *arr, int len, int numOfRotations) {
     }
 }
 
+void leftRotateWithArrRev(int *arr, int len, int numOfRotations) {
+    if (numOfRotations > 0) {
+        numOfRotations = numOfRotations % len;
+
+        reverseIntArr(arr, len, 0, len - 1);
+        reverseIntArr(arr, len, 0, len - numOfRotations - 1);
+        reverseIntArr(arr, len, len - numOfRotations, len - 1);
+    }
+}
+
 int main () {
     int arr[] = {1, 2, 3, 4, 5, 6, 7};
     int len = sizeof(arr) / sizeof(arr[0]);
@@ -63,7 +74,7 @@ int main () {
     for (int i = 0; i < numOfQueries; i++) {
         printIntArray(arr, len);
         printf("num of rotations: %d\n", queries[i]);
-        leftRotateWithTempArr(arr, len, queries[i]);
+        leftRotateWithArrRev(arr, len, queries[i]);
         printIntArray(arr, len);
 
         // reset array state to test array rotations for next query.
