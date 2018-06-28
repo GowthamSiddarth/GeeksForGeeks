@@ -55,7 +55,6 @@ void leftRotateWithJugglingAlgo(int *arr, int len, int numOfRotations) {
 }
 
 int main () {
-    printf("Start\n");
     int arr[] = {1, 2, 3, 4, 5, 6, 7};
     int len = sizeof(arr) / sizeof(arr[0]);
 
@@ -64,7 +63,7 @@ int main () {
     for (int i = 0; i < numOfQueries; i++) {
         printIntArray(arr, len);
         printf("num of rotations: %d\n", queries[i]);
-        leftRotateWithJugglingAlgo(arr, len, queries[i]);
+        leftRotateWithTempArr(arr, len, queries[i]);
         printIntArray(arr, len);
 
         // reset array state to test array rotations for next query.
