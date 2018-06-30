@@ -1,5 +1,6 @@
 #include <malloc.h>
 #include "../Util/arrayCopy.h"
+#include "../Util/printArray.h"
 
 void merge(int *arr, int left, int mid, int right) {    
     int leftSize = mid - left + 1;
@@ -8,10 +9,17 @@ void merge(int *arr, int left, int mid, int right) {
     int *leftArr = (int *)malloc(sizeof(int) * leftSize);
     int *rightArr = (int *)malloc(sizeof(int) * rightSize);
 
-    copyIntArr(arr, leftSize, leftArr, leftSize, leftSize, left, 0);
-    copyIntArr(arr, rightSize, rightArr, rightSize, rightSize, mid + 1, 0);
+    //copyIntArr(arr, leftSize, leftArr, leftSize, leftSize, left, 0);
+    //copyIntArr(arr, rightSize, rightArr, rightSize, rightSize, mid + 1, 0);
+    int i, j, k;    
+    for (i = 0; i < leftSize; i++) {
+        leftArr[i] = arr[left + i];
+    }
+    for (j = 0; j < rightSize; j++) {
+        rightArr[j] = arr[mid + 1 + j];
+    }
 
-    int i = 0, j = 0, k = left;
+    i = 0, j = 0, k = left;
     while (i < leftSize && j < rightSize) {
         if (leftArr[i] <= rightArr[j]) {
             arr[k] = leftArr[i];
@@ -41,8 +49,8 @@ void mergeSortHelper(int *arr, int left, int right) {
     if (left < right) {
         int mid = left + (right - left) / 2;
 
-        mergeSort(arr, left, mid);
-        mergeSort(arr, mid + 1, right);
+        mergeSortHelper(arr, left, mid);
+        mergeSortHelper(arr, mid + 1, right);
 
         merge(arr, left, mid, right);
     }
