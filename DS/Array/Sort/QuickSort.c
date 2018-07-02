@@ -1,4 +1,4 @@
-#include "../../../Helper/Array/Sort/mergeSort.h"
+#include "../../../Helper/Array/Sort/quickSort.h"
 #include <stdio.h>
 #include "../../../Helper/Array/Util/printArray.h"
 
@@ -7,7 +7,7 @@ int main() {
   int len = sizeof(arr) / sizeof(arr[0]);
 
   printIntArray(arr, len);
-  mergeSort(arr, len);
+  quickSort(arr, len);
   printIntArray(arr, len);
 
   return 0;

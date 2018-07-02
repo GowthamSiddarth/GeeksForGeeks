@@ -1,6 +1,5 @@
 #include <malloc.h>
 #include "../Util/arrayCopy.h"
-#include "../Util/printArray.h"
 
 void merge(int *arr, int left, int mid, int right) {    
     int leftSize = mid - left + 1;
