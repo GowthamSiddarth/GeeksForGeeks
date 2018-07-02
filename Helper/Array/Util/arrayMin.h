@@ -1,4 +1,4 @@
-int minItArr(int *arr, int len) {
+int minIntArr(int *arr, int len) {
     if (len > 0) {
         int minVal = arr[0];
         int minIdx = 0;
