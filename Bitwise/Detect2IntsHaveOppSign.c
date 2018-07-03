@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 int haveOppositeSigns(int x, int y) {
-    return (x ^ y) >> (sizeof(int) * 8 - 1);
+    return (x ^ y) < 0;
 }
 
 int main () {
