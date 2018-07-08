@@ -28,5 +28,13 @@ int main() {
   res = exponentialSearchItr(arr, len, key);
   printf("key = %d, res = %d\n", key, res);
 
+  key = 11;
+  res = exponentialSearchItr(arr, len, key);
+  printf("key = %d, res = %d\n", key, res);
+
+  key = 1;
+  res = exponentialSearchItr(arr, len, key);
+  printf("key = %d, res = %d\n", key, res);
+
   return 0;
 }

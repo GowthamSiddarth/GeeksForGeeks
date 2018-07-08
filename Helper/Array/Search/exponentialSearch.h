@@ -10,5 +10,6 @@ int exponentialSearchItr(int *arr, int len, int key) {
         idx += idx;
     }
 
-    return idx / 2 + binarySearchItr(arr + idx / 2, len - idx / 2, key);
+    int binarySearchRes = binarySearchItr(arr + idx / 2, len - idx / 2, key);
+    return -1 == binarySearchRes ? -1 : idx / 2 + binarySearchRes;
 }
