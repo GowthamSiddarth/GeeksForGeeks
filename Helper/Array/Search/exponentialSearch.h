@@ -1,6 +1,6 @@
 #include "binarySearch.h"
 
-int exponentialSearch(int *arr, int len, int key) {
+int exponentialSearchItr(int *arr, int len, int key) {
     if (len > 0 && arr[0] == key) {
         return 0;
     }
