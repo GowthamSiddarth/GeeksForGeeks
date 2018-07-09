@@ -11,10 +11,10 @@ int main () {
     int numOfQueries = sizeof(queries) / sizeof(queries[0]);
     for (int i = 0; i < numOfQueries; i++) {
         int key = queries[i];
-        //int resItr = ternarySearchRec(arr, len, key);
+        int resItr = ternarySearchRec(arr, len, key);
         int resRec = ternarySearchRec(arr, len, key);
 
-        printf("key = %d, resRec = %d\n", key, resRec);
+        printf("key = %d, resItr = %d, resRec = %d\n", key, resItr, resRec);
     }
 
     return 0;
