@@ -11,12 +11,25 @@ void waveSortWithSorting(int *arr, int len) {
     }
 }
 
+void waveSortByTraversal(int *arr, int len) {
+    for (int i = 0; i < len; i += 2) {
+        if (i > 0 && arr[i] < arr[i - 1]) {
+            swapInt(&arr[i], &arr[i - 1]);
+        }
+
+        if (i < len - 1 && arr[i] < arr[i + 1]) {
+            swapInt(&arr[i], &arr[i + 1]);
+        }
+    }
+}
+
 int main () {
-    int arr[] = {10, 5, 6, 3, 2, 20, 100, 80};
+    int arr[] = {2, 3, 5, 6, 10, 20, 80, 100};
     int len = sizeof(arr) / sizeof(arr[0]);
 
     printIntArray(arr, len);
-    waveSortWithSorting(arr, len);
+    //waveSortWithSorting(arr, len);
+    waveSortByTraversal(arr, len);
     printIntArray(arr, len);
 
     return 0;
