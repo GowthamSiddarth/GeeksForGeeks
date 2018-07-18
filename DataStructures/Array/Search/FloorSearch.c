@@ -3,7 +3,7 @@
 #include "../../../Helper/Array/Util/printArray.h"
 
 int main () {
-    int arr[] = {1, 2, 4, 6, 10, 12, 14};
+    int arr[] = {1, 2, 4, 4, 6, 10, 12, 14};
     int len = sizeof(arr) / sizeof(arr[0]);
     printIntArray(arr, len);
 
