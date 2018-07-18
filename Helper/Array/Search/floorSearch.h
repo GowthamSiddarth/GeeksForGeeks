@@ -6,7 +6,7 @@ int floorSearchItr(int *arr, int len, int key) {
 
         if (key == arr[mid]) {
             return mid;
-        } else if (key > 0 && key >= arr[mid - 1] && key < arr[mid]) {
+        } else if (mid > 0 && key >= arr[mid - 1] && key < arr[mid]) {
             return mid - 1;
         } else if (key < arr[mid]) {
             high = mid - 1;
@@ -15,5 +15,5 @@ int floorSearchItr(int *arr, int len, int key) {
         }
     }
 
-    return -1;
+    return low == len ? len - 1 : -1;
 }
