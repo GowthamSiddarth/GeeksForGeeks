@@ -5,7 +5,7 @@ int ceilSearchItr(int *arr, int len, int key) {
         int mid = low + (high - low) / 2;
 
         if (key == arr[mid]) {
-            return mid - 1;
+            return mid;
         } else if (mid < len - 1 && key > arr[mid] && key <= arr[mid + 1]) {
             return mid + 1;
         } else if (key > arr[mid]) {
