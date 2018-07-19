@@ -6,3 +6,12 @@ int lenOfStrItr(char *s) {
 
     return i;
 }
+
+int lenOfStrRec(char *s) {
+    char *_s = s;
+    if ('\0' == *_s) {
+        return _s - s;
+    } else {
+        return lenOfStrRec(++_s);
+    }
+}
