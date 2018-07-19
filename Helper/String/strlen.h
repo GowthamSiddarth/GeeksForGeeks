@@ -12,6 +12,6 @@ int lenOfStrRec(char *s) {
     if ('\0' == *_s) {
         return _s - s;
     } else {
-        return lenOfStrRec(++_s);
+        return 1 + lenOfStrRec(++_s);
     }
 }
