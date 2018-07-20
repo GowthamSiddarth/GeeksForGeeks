@@ -20,6 +20,17 @@ int isPowerOf2WithLog2(int n) {
     return ceil(log2(n)) == floor(log2(n));
 }
 
+int isPowerOf2WithRightShift(int n) {
+    while (1 != n) {
+        if (1 == (n % 2)) {
+            return 0;
+        }
+        n = n >> 1;
+    }
+
+    return 1;
+}
+
 int main () {
     int queries[] = {2, 3, 4, 32, 31, 45, 65, 128};
     int numOfQueries = sizeof(queries) / sizeof(queries[0]);
@@ -27,7 +38,7 @@ int main () {
     for (int i = 0; i < numOfQueries; i++) {
         int res1 = isPowerOf2WithSetBitsCount(queries[i]);
         int res2 = isPowerOf2WithLog2(queries[i]);
-        
+
         printf("n = %d, res1 = %d, res2 = %d\n", queries[i], res1, res2);
     }
 
