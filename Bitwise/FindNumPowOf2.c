@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <math.h>
 
 int countSetBits(int n) {
     int count = 0;
@@ -11,8 +12,12 @@ int countSetBits(int n) {
     return count;
 }
 
-int isPowerOf2(int n) {
+int isPowerOf2WithSetBitsCount(int n) {
     return 1 == countSetBits(n);
+}
+
+int isPowerOf2WithLog2(int n) {
+    return ceil(log2(n)) == floor(log2(n));
 }
 
 int main () {
@@ -20,8 +25,10 @@ int main () {
     int numOfQueries = sizeof(queries) / sizeof(queries[0]);
 
     for (int i = 0; i < numOfQueries; i++) {
-        int res = isPowerOf2(queries[i]);
-        printf("n = %d, res = %d\n", queries[i], res);
+        int res1 = isPowerOf2WithSetBitsCount(queries[i]);
+        int res2 = isPowerOf2WithLog2(queries[i]);
+        
+        printf("n = %d, res1 = %d, res2 = %d\n", queries[i], res1, res2);
     }
 
     return 0;
