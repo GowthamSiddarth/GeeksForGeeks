@@ -1,21 +1,23 @@
 #include <stdio.h>
 #include <malloc.h>
 #include "sllNode.h"
+#include "createSLLNode.h"
 
 #ifndef APPEND_NODE
 #define APPEND_NODE
 
-struct SLLNode* appendIntNode(struct SLLNode* head, int data) {
-    struct SLLNode* temp = head;
+void appendIntNode(struct SLLNode** head, int data) {
+    struct SLLNode *temp = *head;
 
-    while (NULL != temp) {
+    while (NULL != temp && NULL != temp->next) {
         temp = temp->next;
     }
 
-    struct SLLNode *tail = (struct SLLNode *)malloc(sizeof(struct SLLNode));
-    tail->value = data;
-
-    return tail;
+    if (NULL == temp) {
+        *head = createSLLNode(data);
+    } else {
+        temp->next = createSLLNode(data);
+    }    
 }
 
 #endif
