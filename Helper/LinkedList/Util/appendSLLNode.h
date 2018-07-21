@@ -2,6 +2,9 @@
 #include <malloc.h>
 #include "sllNode.h"
 
+#ifndef APPEND_NODE
+#define APPEND_NODE
+
 struct SLLNode* appendIntNode(struct SLLNode* head, int data) {
     struct SLLNode* temp = head;
 
@@ -14,3 +17,5 @@ struct SLLNode* appendIntNode(struct SLLNode* head, int data) {
 
     return tail;
 }
+
+#endif

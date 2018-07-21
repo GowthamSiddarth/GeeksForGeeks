@@ -1,5 +1,5 @@
-#include "sllNode.h"
 #include "appendSLLNode.h"
+#include "sllNode.h"
 
 struct SLLNode* createIntSLL(int *arr, int len) {
     struct SLLNode *head;
