@@ -1,5 +1,6 @@
 #include "../Util/createSLL.h"
 #include "../Util/appendSLLNode.h"
+#include "../Util/prependSLLNode.h"
 #include <stdio.h>
 #include "../Util/printList.h"
 
@@ -11,6 +12,9 @@ int main () {
     printIntList(list);
 
     appendIntNode(&list, 10);
+    printIntList(list);
+
+    prependIntNode(&list, 0);
     printIntList(list);
 
     return 0;
