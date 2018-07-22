@@ -15,11 +15,21 @@ int main () {
     printIntList(list);
 
     for (int i = 0; i < numOfQueries; i++) {
-        struct SLLIntNode * res = linearSearchItr(list, queries[i]);
-        if (NULL == res) {
-            printf("key = %d, res = NULL\n", queries[i]);
+        struct SLLIntNode * res1 = linearSearchItr(list, queries[i]);
+        struct SLLIntNode * res2 = linearSearchRec(list, queries[i]);
+
+        printf("key = %d, ", queries[i]);
+        if (NULL == res1) {
+            printf("res1 = NULL, ", queries[i]);
         } else {
-            printf("key = %d, res = %d\n", queries[i], res->value);
+            printf("res1 = %d, ", queries[i], res1->value);
+        }
+
+        
+        if (NULL == res2) {
+            printf("res2 = NULL\n", queries[i]);
+        } else {
+            printf("res2 = %d\n", queries[i], res2->value);
         }
     }
 
