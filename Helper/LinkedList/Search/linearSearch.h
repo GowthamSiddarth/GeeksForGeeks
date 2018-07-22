@@ -12,4 +12,12 @@ struct SLLIntNode * linearSearchItr(struct SLLIntNode *head, int key) {
     return temp;
 }
 
+struct SLLIntNode * linearSearchRec(struct SLLIntNode *head, int key) {
+    if (NULL == head || head->value == key) {
+        return head;
+    } else {
+        return linearSearchRec(head->next, key);
+    }
+}
+
 #endif
