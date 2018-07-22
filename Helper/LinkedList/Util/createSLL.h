@@ -1,15 +1,15 @@
 #include "createSLLNode.h"
 #include "sllNode.h"
 
-struct SLLNode* createIntSLL(int *arr, int len) {
-    struct SLLNode *head = NULL;
-    struct SLLNode *temp = head;
+struct SLLIntNode* createIntSLL(int *arr, int len) {
+    struct SLLIntNode *head = NULL;
+    struct SLLIntNode *temp = head;
 
     for (int i = 0; i < len; i++) {
         if (NULL == head) {
-            head = temp = createSLLNode(arr[i]);
+            head = temp = createSLLIntNode(arr[i]);
         } else {
-            temp->next = createSLLNode(arr[i]);
+            temp->next = createSLLIntNode(arr[i]);
             temp = temp->next;
         }        
     }

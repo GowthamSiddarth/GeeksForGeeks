@@ -4,8 +4,8 @@
 #ifndef CREATE_SLL_NODE
 #define CREATE_SLL_NODE
 
-struct SLLNode * createSLLNode(int data) {
-    struct SLLNode * node = (struct SLLNode *)malloc(sizeof(struct SLLNode));
+struct SLLIntNode * createSLLIntNode(int data) {
+    struct SLLIntNode * node = (struct SLLIntNode *)malloc(sizeof(struct SLLIntNode));
     node->next = NULL;
     node->value = data;
 

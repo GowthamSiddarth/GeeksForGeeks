@@ -1,8 +1,8 @@
 #include "sllNode.h"
 #include <stdio.h>
 
-void printIntList(struct SLLNode* head) {
-    struct SLLNode *temp = head;
+void printIntList(struct SLLIntNode* head) {
+    struct SLLIntNode *temp = head;
 
     while (NULL != temp) {
         printf("%d ", temp->value);

@@ -1,9 +1,9 @@
 #ifndef SLLNODE_H
 #define SLLNODE_H
 
-struct SLLNode {
+struct SLLIntNode {
     int value;
-    struct SLLNode *next;
+    struct SLLIntNode *next;
 };
 
 #endif
