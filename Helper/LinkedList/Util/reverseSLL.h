@@ -3,10 +3,10 @@
 #ifndef REVERSE_SLL
 #define REVERSE_SLL
 
-struct SLLIntNode * reverseIntSLLItr(struct SLLIntNode * head) {
+void reverseIntSLLItr(struct SLLIntNode ** head) {
     struct SLLIntNode *prev = NULL;
-    struct SLLIntNode *curr = head;
-    struct SLLIntNode *next = head;
+    struct SLLIntNode *curr = *head;
+    struct SLLIntNode *next = *head;
 
     while (NULL != next) {
         next = curr->next;
@@ -15,7 +15,7 @@ struct SLLIntNode * reverseIntSLLItr(struct SLLIntNode * head) {
         curr = next;
     }
 
-    return prev;
+    *head = prev;
 }
 
 #endif
