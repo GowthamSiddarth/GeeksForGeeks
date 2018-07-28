@@ -1,4 +1,6 @@
 #include "../../Util/swap.h"
+#ifndef QUICK_SORT
+#define QUICK_SORT
 
 int partition(int *arr, int low, int high) {
     int pivot = arr[high];
@@ -27,3 +29,5 @@ void quickSortHelper(int *arr, int low, int high) {
 void quickSort(int *arr, int len) {
     quickSortHelper(arr, 0, len - 1);
 }
+
+#endif
