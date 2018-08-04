@@ -7,12 +7,15 @@ int main () {
     int len = sizeof(arr) / sizeof(arr[0]);
 
     printIntArray(arr, len);
-    int maxIdx = maxIntArr(arr, len);
+    int maxIdxItr = maxIntArr(arr, len);
+    int maxIdxRec = maxIntRec(arr, len);
 
-    if (-1 != maxIdx) {
-        printf("max val: %d, idx: %d\n", arr[maxIdx], maxIdx);
+    if (-1 != maxIdxItr) {
+        printf("max val: %d, idx: %d\n", arr[maxIdxItr], maxIdxItr);
+        printf("max val: %d, idx: %d\n", arr[maxIdxRec], maxIdxRec);
     } else {
-        printf("max idx: %d\n", maxIdx);
+        printf("max idx: %d\n", maxIdxItr);
+        printf("max idx: %d\n", maxIdxRec);
     }   
     
     return 0;
