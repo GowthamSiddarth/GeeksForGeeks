@@ -20,9 +20,9 @@ int maxIntArr(int *arr, int len) {
 
 int maxIntRecHelper(int *arr, int len, int maxVal, int index, int maxIdx) {
     if (index == len) {
-        return maxVal;
+        return maxIdx;
     } else {
-        if (arr[index] < maxVal) {
+        if (arr[index] > maxVal) {
             maxVal = arr[index];
             maxIdx = index;
         }
