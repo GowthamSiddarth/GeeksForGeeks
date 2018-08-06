@@ -1,3 +1,6 @@
+#ifndef FLOOR_SEARCH
+#define FLOOR_SEARCH
+
 int floorSearchItr(int *arr, int len, int key) {
     int low = 0, high = len - 1;
 
@@ -17,3 +20,5 @@ int floorSearchItr(int *arr, int len, int key) {
 
     return low == len ? len - 1 : -1;
 }
+
+#endif
