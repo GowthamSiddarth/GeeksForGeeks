@@ -7,18 +7,18 @@ int getPivotInRotatedSortedIntArr(int *arr, int len) {
     while (low <= high) {
         int mid = low + (high - low) / 2;
 
-        if (arr[mid] <= arr[low] && arr[mid] <= arr[high]) {
-            return mid;
-        } else if (arr[mid] >= arr[low] && arr[mid] >= arr[high]) {
+        if (mid < high && arr[mid] > arr[mid + 1]) {
             return mid + 1;
-        } else if (arr[mid] < arr[0]) {
+        } else if (mid > low && arr[mid] < arr[mid - 1]) {
+            return mid;
+        } else if (arr[low] >= arr[mid]) {
             high = mid - 1;
         } else {
             low = mid + 1;
         }
     }
 
-    return -1;
+    return low;
 }
 
 #endif
